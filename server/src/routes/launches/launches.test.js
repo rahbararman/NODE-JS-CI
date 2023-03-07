@@ -17,6 +17,7 @@ const PostDataMissing = {
 describe('test launches API', ()=>{
     beforeAll(async ()=>{
         await mongooseConnect();
+        await readAllDataPromise;
     });
     afterAll(async ()=>{
         await mongooseDisconnect();
