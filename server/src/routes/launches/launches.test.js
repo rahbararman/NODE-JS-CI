@@ -1,6 +1,7 @@
 const request = require('supertest');
 const app = require('../../app');
 const {mongooseConnect, mongooseDisconnect} = require('../../services/mongo')
+const { readAllDataPromise } = require('../../models/planets.model');
 
 const PostData = {
     mission: 'Arman-110',
