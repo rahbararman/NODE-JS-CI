@@ -1,14 +1,14 @@
 async function httpGetPlanets() {
   // TODO: Once API is ready.
   // Load planets and return as JSON.
-  const response = await fetch('http://localhost:8000/planets');
+  const response = await fetch('/planets');
   return await response.json();
 }
 
 // TODO: Once API is ready.
 // Load launches, sort by flight number, and return as JSON.
 async function httpGetLaunches() {
-  const response = await fetch('http://localhost:8000/launches');
+  const response = await fetch('/launches');
   const allLaunches = await response.json();
   return allLaunches.sort((a,b)=>{
     return a.flightNumber - b.flightNumber;
@@ -19,7 +19,7 @@ async function httpGetLaunches() {
 async function httpSubmitLaunch(launch) {
   try {
     
-    return await fetch("http://localhost:8000/launches",{
+    return await fetch("/launches",{
       method: "post",
       body: JSON.stringify(launch),
       headers: {
@@ -38,7 +38,7 @@ async function httpSubmitLaunch(launch) {
 async function httpAbortLaunch(id) {
 
   try {
-    return await fetch(`http://localhost:8000/launches/${id}`,{
+    return await fetch(`/launches/${id}`,{
       method: "delete"
     });
   }
